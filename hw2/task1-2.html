@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 1-2</title>
+</head>
+
+<body>
+    <script>
+        // Task 1
+        let a = 1, b = 1, c, d;        
+        c = ++a;
+        //2, т.к форма префиксная унарный инкремент возвращает значение
+        alert(c);
+
+        d = b++;
+        //1, т.к форма постфиксная унарный инкремент не возвращает значение
+        alert(d);
+
+        c = 2 + ++a;
+        // 5, т.к. форма префиксная унарный инкремент вернёт увеличенное число
+        alert(c);
+        
+        d = 2 + b++;
+        // 4, т.к. форма постфиксная унарный инкремент не вернёт увеличенное число
+        alert(d);
+
+        alert(a); // 3
+        alert(b); // 3
+        // Task 2
+        let a = 2;
+        let x = 1 + (a *= 2); //'a *= 2' = 'a = a * 2 '
+        // x = 5; a = 4;
+    </script>
+</body>
+
+</html>

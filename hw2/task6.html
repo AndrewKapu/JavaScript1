@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task 6</title>
+</head>
+
+<body>
+    <script>
+        let userAmount = parseInt(prompt('Сколько денег вы хотите положить в банк?'))
+        let correctEnding = correctDeclination(userAmount, 'рубль', 'рубля', 'рублей');
+        alert(`Ваша сумма в ${userAmount} ${correctEnding} успешно зачислена`);
+
+        /**
+         * Returns correct ending for word 
+         * @param {number} amount amount of money
+         * @param {number} one correct ending for '1 рубль, 1 яблоко', etc
+         * @param {number} two correct ending for '2 рубля, 4 яблока', etc
+         * @param {number} five correct ending for '0 рублей, 10 яблок', etc
+         * @returns {string} correct ending
+         */
+        function correctDeclination(amount, one, two, five) {
+            // Last two digits of amount
+            lastTwo = Math.abs(amount % 100);
+            // Last digit
+            lastOne = Math.abs(amount % 10);
+            if (lastTwo !== 11 && lastOne === 1) {
+                return 'рубль';
+            } else if (lastOne >= 2 && lastOne <= 4 && lastTwo < 10) {
+                return 'рубля';
+            } else {
+                return 'рублей'
+            }
+        }
+        
+    </script>
+</body>
+
+</html>
