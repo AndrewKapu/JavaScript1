@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task4</title>
+</head>
+
+<body>
+    <script>
+        /*
+С помощью цикла while вывести все простые числа в промежутке от 0 до 100
+*/
+        'use strict';
+        // Prime numbers from 0 to 100
+
+        let i = 0;
+        while (i < 100) {
+            if (isPrime(i)) {
+                console.log(i);
+            }
+            i++;
+        }
+        /**
+         * Checks if number is prime
+         * @param {number} x number to be checked
+         * @returns {boolean} true if prime, false if not
+         */
+        function isPrime(x) {
+            if (i < 2) {
+                return false;
+            }
+            for (let i = 2; i <= Math.sqrt(x); i++) {
+                if (x % i === 0) {
+                    return false;
+                }
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>

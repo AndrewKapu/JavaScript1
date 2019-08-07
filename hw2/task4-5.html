@@ -11,12 +11,25 @@
 <body>
 
     <script>
+'use strict';
+/*
+4. Реализовать основные 4 арифметические операции (+, -, /, *) в виде функций с двумя параметрами.
+Обязательно использовать оператор return.
+
+5. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation),
+где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от
+переданного значения операции (использовать switch) выполнить одну из арифметических операций
+(использовать функции из задания 4) и вернуть полученное значение.
+
+*/
+        
+
         /**
          * Function returns sum of two
          * @param {number} a first argument
          * @param {number} b second argument
          * @returns {number} sum
-         */ 
+         */
         function sum(a, b) {
             return a + b;
         }
@@ -26,7 +39,7 @@
          * @param {number} a first argument
          * @param {number} b second argument
          * @returns {number} difference
-         */ 
+         */
         function dif(a, b) {
             return a - b;
         }
@@ -36,7 +49,7 @@
          * @param {number} a first argument
          * @param {number} b second argument
          * @returns {number} multiplication
-         */ 
+         */
         function mult(a, b) {
             return a * b;
         }
@@ -46,7 +59,7 @@
          * @param {number} a first argument
          * @param {number} b second argument
          * @returns {number} division
-         */ 
+         */
         function div(a, b) {
             return a / b;
         }
@@ -57,7 +70,7 @@
          * @param {number} a first argument
          * @param {number} b second argument
          * @returns {number} evaluated expression
-         */ 
+         */
         function mathOperation(arg1, arg2, operation) {
             switch (operation) {
                 case 'sum':
@@ -71,7 +84,7 @@
             }
 
         }
-             
+
 
         console.log(mathOperation(50, 50, 'mult'));
     </script>

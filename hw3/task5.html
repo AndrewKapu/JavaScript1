@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Task5</title>
+</head>
+
+<body>
+    <script>
+/*
+    Дан массив (создать такой же, с такими же значениями):
+
+```
+const arr = [
+[2, 4, 6],
+[1, 5, 10],
+[7, 4, 1],
+];
+```
+
+Задания:
+1. Найти массив, у которого сумма всех чисел максимальна, вывести в console.log индекс этого массива.
+2. Получить и вывести в console.log минимальное значение найденное в массиве, который мы получили в
+первом пункте.
+
+*/
+        'use strict';
+
+        const arr = [
+            [-2, -4, -6],
+            [-1, -5, -10],
+            [-7, -4, -1],
+        ];
+        let biggestChildKey = biggestSubArr(arr);
+        let minVal = minValofArr(arr[biggestChildKey]);
+
+        console.log(`Index of biggest child is ${biggestChildKey}, minimum value in this child is ${minVal}`);
+
+        /**
+         * Finds child array of transferable array with biggest summary of values
+         * @param {array} arr Array
+         * @returns {number} key of biggest array
+         */
+        function biggestSubArr(arr) {
+            let currentMaxSum = null;
+            let sum = 0;
+            let keyOfBiggest;
+            for (let i = 0; i < arr.length; i++) {
+                for (let j = 0; j < arr[i].length; j++) {
+                    sum += arr[i][j];
+                }
+                if (currentMaxSum === null) {
+                    currentMaxSum = sum;
+                }
+                if (sum >= currentMaxSum) {
+                    currentMaxSum = sum;
+                    keyOfBiggest = i;
+                }
+                sum = 0;
+            }
+            return keyOfBiggest;
+        }
+
+        /**
+         * Finds min val in array
+         * @param {array} arr Array
+         * @returns {number} minimal value in array
+         */
+        function minValofArr(arr) {
+            let minVal = arr[0];
+
+            for (let i = 1; i < arr.length; i++) {
+                if (arr[i] < minVal) {
+                    minVal = arr[i];
+                }
+            }
+            return minVal;
+        }
+    </script>
+</body>
+
+</html>
