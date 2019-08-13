@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #ccc;
+        }
+
+        form {
+            width: 300px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0;
+        }
+
+        input {
+            font-size: 16px;
+            box-sizing: border-box;
+            width: 300px;
+            height: 30px;
+            padding: 5px;
+        }
+
+        button {
+            margin-top: 10px;
+            display: block;
+            cursor: pointer;
+            font-size: 16px;
+            background-color: transparent;
+            border: 1px solid aqua;
+        }
+
+        button:hover {
+            background-color: aqua;
+        }
+
+        .form__input-wrapper {
+            position: relative;
+        }
+
+        .error-msg {
+            position: absolute;
+            left: 313px;
+            top: 33px;
+            width: 300px;
+            
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="form" action="#">
+        <div class="form__input-wrapper">
+            <label for="name">Ваше имя</label>
+            <input id="name" type="name" placeholder="John">            
+        </div>
+        <div class="form__input-wrapper">
+            <label for="tel"> Ваш телефон</label>
+            <input id="tel" type="tel" placeholder="11111111111">
+        </div>
+        <div class="form__input-wrapper">
+            <label for="password">Пароль</label>
+            <input id="password" type="password" placeholder="12345">
+        </div>
+        <div class="form__input-wrapper">
+            <label for="password2">Повторите пароль</label>
+            <input id="password2" type="password" placeholder="12345">
+        </div>
+        <button id="submitForm" type="submit">Отправить форму</button>
+    </form>
+    <script src="validation.js"></script>
+</body>
+
+</html>
