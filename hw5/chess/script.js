@@ -180,8 +180,7 @@ const chess = {
     /**
      * Sets chess figures on start positions
      */
-    setFigures() {
-        //TODO:
+    setFigures() {        
         this.figuresStorage.forEach(figure => {
             figure.position.x.forEach(coordinateX => {
                 this.table.querySelector(`td[data-x="${coordinateX}"][data-y="${figure.position.y}"]`)

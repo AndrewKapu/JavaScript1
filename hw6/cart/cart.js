@@ -123,8 +123,7 @@ const cart = {
         <span class="${this.settings.cartDisplayGeneralClass} ${this.settings.cartDisplayQuantityClass}">Quantity: ${product.quantity}</span>
         <span class="${this.settings.cartDisplayGeneralClass}">X ${product.price}$</span>`;
         productWrapper.innerHTML = productHtmlString;
-
-        //TODO: DelBtn
+        
         let productDelBtn = document.createElement('a');
         productDelBtn.classList.add(this.settings.cartProductDelBtnClass);
         productDelBtn.innerText = 'Del';
@@ -152,8 +151,7 @@ const cart = {
      * Deletes products from our script data and from user's html
      * @param {int} id Products id
      */
-    deleteProductFromCart(id) {
-        //TODO:        
+    deleteProductFromCart(id) {               
         this.changeTotalPrice(this.userCart.products[id].price * this.userCart.products[id].quantity, 'reduce');
         delete this.userCart.products[`${id}`];
         this.cartContainer.querySelector(`[data-id="${id}"]`).remove();
